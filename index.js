@@ -2,7 +2,7 @@ import express from "express";
 import postRoutes from "./routes/posts.js"
 import authRoutes from "./routes/auth.js"
 import cookieParser from "cookie-parser";
-
+import * as dotenv from 'dotenv'
 
 const app = express()
 
@@ -26,6 +26,6 @@ app.use('/auth', authRoutes)
 //     const file = req.file;
 //     res.status(200).json(file.filename);
 //   });
-app.listen(8000, () => {
-    console.log('App running on port 8000')
+app.listen(process.env.PORT, () => {
+    console.log('Running')
 })
